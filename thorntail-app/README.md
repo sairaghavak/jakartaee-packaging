@@ -4,10 +4,13 @@
 
 # How to run
 
-- Just type the following command to generate Uber jar
+- Just type the following command to generate Uber jar  
   `mvnw clean package`
-- Run the fat jar
+- Run the fat jar  
   `java -jar target\thorntial-app-thorntail.jar`
+- The app runs at port `8080`  
+  `http://localhost:8080/thorntail-app`  
+  `http://localhost:8080/thorntail-app/about`
 
 **Note:** The thorntail maven plugin generates uber jar with `-thorntail.jar` suffix.
 
