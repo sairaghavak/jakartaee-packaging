@@ -1,0 +1,10 @@
+# Ignore the following for Mavenized eclipse project
+.classpath
+.project
+.settings
+
+# Ignore VS code settings
+.vscode
+
+# Binaries
+target
