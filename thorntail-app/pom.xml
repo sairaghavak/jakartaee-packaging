@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.sairaghavak</groupId>
+  <artifactId>thorntail-app</artifactId>
+  <version>1.0</version>
+
+  <packaging>war</packaging>
+  <name>thorntail-app</name>
+  <url>http://www.sairaghava.com</url>
+
+  <dependencies>
+    <dependency>
+      <groupId>javax</groupId>
+      <artifactId>javaee-api</artifactId>
+      <version>8.0</version>
+      <scope>provided</scope>
+    </dependency>
+
+    <!-- Thorntail BOM dependency -->
+    <dependency>
+      <groupId>io.thorntail</groupId>
+      <artifactId>bom</artifactId>
+      <version>${version.thorntail}</version>
+      <scope>import</scope>
+      <type>pom</type>
+    </dependency>
+
+    <!-- Specifying this dependency is optional, if you don't thorntail scans and adds required javaee features -->
+    <dependency>
+      <groupId>io.thorntail</groupId>
+      <artifactId>jaxrs</artifactId>
+      <version>${version.thorntail}</version>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <finalName>${project.artifactId}</finalName>
+    <plugins>
+      <!-- Thorntail plugin to package app -->
+      <plugin>
+        <groupId>io.thorntail</groupId>
+        <artifactId>thorntail-maven-plugin</artifactId>
+        <version>${version.thorntail}</version>
+        <executions>
+          <execution>
+            <goals>
+              <goal>package</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+    <version.thorntail>2.5.0.Final</version.thorntail>
+    <failOnMissingWebXml>false</failOnMissingWebXml>
+  </properties>
+</project>
